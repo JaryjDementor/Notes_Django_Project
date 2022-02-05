@@ -1,0 +1,12 @@
+{% extends 'notes/base.html' %}
+
+
+{% block title %}
+First page
+{% endblock %}
+
+{% block content %}
+
+<h1><a href="{% url 'register' %}">Register</a>/<a href="{% url 'login' %}">Login</a></h1>
+
+{% endblock %}
