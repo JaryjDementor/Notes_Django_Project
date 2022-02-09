@@ -1,0 +1,16 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<div class="features">
+<form method="post">
+{% csrf_token %}
+    {{form.id}}
+    {{form.title}}<br>
+    {{form.text}}<br>
+    {{form.data}}<br>
+    <button class="btn btn-success" type="submit"> Add note</button>
+</form>
+</div>
+
+
+{% endblock %}
