@@ -7,7 +7,7 @@ from . import models
 class NoteUserForm(ModelForm):
     class Meta:
         model=models.Create_base
-        fields=['title', 'text', 'data']
+        fields=['title', 'text']
 
         widgets= {
             'title': TextInput(attrs={
@@ -17,9 +17,6 @@ class NoteUserForm(ModelForm):
             'text': Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Your note'
-            }),
-            'data': DateTimeInput(attrs={
-                'class': 'form-control'
             }),
             'iduser': TextInput(attrs={
                 'class': 'form-control',

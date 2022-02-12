@@ -1,0 +1,11 @@
+{% extends 'addNote/base.html' %}
+
+{% block content %}
+<h1> Yor title note and data </h1>
+{% for item in info %}
+    <p><a href="{% url 'view_notess' item.id %}">{{item.title}}</a>- {{item.data}} {{ item.id }}</p>
+{% endfor %}
+
+<h2><a href="{% url 'addnote' %}">Create new note</a> </h2>
+
+{% endblock %}

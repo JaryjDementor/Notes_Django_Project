@@ -1,5 +1,6 @@
-
 from django.db.models import Model, IntegerField,CharField,DateTimeField
+from datetime import datetime
+from  django.urls import  reverse
 
 # Create your models here.
 
@@ -7,13 +8,16 @@ from django.db.models import Model, IntegerField,CharField,DateTimeField
 class Create_base(Model):
     title=CharField('Title',max_length=100)
     text=CharField('Your note', max_length=255)
-    data=DateTimeField('Date yor note')
+    data=DateTimeField(default=datetime.now())
     iduser=CharField('idUser',max_length=5)
 
-    def __str__(self):
-        return self.title
 
     class Meta:
         verbose_name = 'News'
         verbose_name_plural = 'News'
 
+    def __str__(self):
+        return f' {self.title} {self.text} {self.data}'
+
+    # def get_url(self):
+    #     return reverse('view_note')
