@@ -1,12 +1,16 @@
 {% extends 'notes/base.html' %}
+{% load static %}
 
+{% block css_aditional %}
+<link rel="stylesheet" href="{% static 'notes/css/first_page.css'%}">
+
+{% endblock %}
 
 {% block title %}
 First page
 {% endblock %}
 
 {% block content %}
-
-<h1><a href="{% url 'register' %}">Register</a>/<a href="{% url 'login' %}">Login</a></h1>
-
+<h2><a href="{% url 'register' %}">Register</a></h2>
+<h3>  <a href="{% url 'login' %}">Login</a> </h3>
 {% endblock %}
