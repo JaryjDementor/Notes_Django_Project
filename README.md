@@ -28,9 +28,9 @@
 ## If the data entered is correct, the user is redirected to the record title page.
 ![](img_For_README/viewtitle.png)
 ### On this page you can view the title of your entries or go to the page for creating new note.
-##If the user navigates to the page for creating a new note, the application will go to the record creation page.
+## If the user navigates to the page for creating a new note, the application will go to the record creation page.
 ![](img_For_README/createnote.png)
-##If the user clicks on the title of their entry, the app will take them to the view note page
+## If the user clicks on the title of their entry, the app will take them to the view note page
 ![](img_For_README/viewnote.png)
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 
