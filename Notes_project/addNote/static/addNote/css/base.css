@@ -1,7 +1,8 @@
 
 body{
-     background-color: #2c2c2c;
-    background-image: url('/static/img/addNotefon.png');
-    background-size: 100% auto;
+    background-color: #2c2c2c;
+    background-image: url('/static/img/fonaddd.png');
+    background-size: 100% 300%;
+    overflow: hidden;
 }
 
