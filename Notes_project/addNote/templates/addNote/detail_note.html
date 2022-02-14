@@ -1,6 +1,13 @@
 {% extends 'addNote/base.html' %}
+{% load static %}
+
+{% block css_aditional %}
+<link rel="stylesheet" href="{% static 'addNote/css/detail_note.css'%}">
+{% endblock %}
 
 {% block content %}
-<h1> hallo </h1>
-<h2> {{ note }} </h2>
+<h1> Title: </h1>
+<h2> {{ note.title }} </h2>
+<h3> Note: </h3>
+<h4> {{ note.text }} </h4>
 {% endblock %}
