@@ -58,4 +58,6 @@
 ![](img_For_README/viewnote.png)
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 
+## Thank you for reading the Notes app :)
+
 
