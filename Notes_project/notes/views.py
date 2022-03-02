@@ -1,46 +1,44 @@
-from django.shortcuts import render,redirect
-from .forms import NewUserForm
-from django.contrib.auth import login, authenticate, models, logout
-from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm
-
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import NoteUserForm
+from .models import Note
+from django.http import HttpResponse
 # Create your views here.
 
-def first_page(reqeust):
-    return render(reqeust,'notes/first_page.html')
 
-def register_request(request):
-    if request.method == "POST":
-        form = NewUserForm(request.POST)
+def create(request):
+    error=''
+    id = request.user.id
+    if request.method == 'POST':
+
+        form = NoteUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful." )
+            order = form.save(commit=False)
+            order.iduser=request.user.id
+            order.save()
             return redirect("viewint_title")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = NewUserForm()
-    return render (request=request, template_name="notes/register.html", context={"register_form":form})
 
-def login_request(request):
-    if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
 
-                return redirect("viewint_title")
-            else:
-                messages.error(request,"Invalid username or password.")
         else:
-            messages.error(request,"Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request=request, template_name="notes/login.html", context={"login_form":form})
+            error= 'Not good form'
+    form=NoteUserForm
+    data={
+        'form':form,
+        'error': error
+    }
+    return render(request,'notes/create.html',data)
 
-def logout_request(request):
-    logout(request)
-    messages.info(request, "You have successfully logged out.")
-    return redirect("first_page")
+
+def viewes_user_title(request):
+    db=Note.objects.all()
+    idus=request.user.id
+    title = Note.objects.filter(iduser=idus)
+    data={
+        'info': title,
+        'db': db
+    }
+    return render(request,'notes/viewe_user_title.html',context=data)
+
+def view_your_note(request,id_note: int):
+    note=Note.objects.get(id=id_note)
+    # movie = get_object_or_404(Create_base)
+    return render(request,'notes/detail_note.html',context={'note':note})

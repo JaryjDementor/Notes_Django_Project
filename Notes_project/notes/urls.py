@@ -2,9 +2,8 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', first_page,name='first_page'),
-    path("register", register_request, name="register"),
-    path("login", login_request, name="login"),
-    path("logout", logout_request, name="logout"),
+    path('', create, name='addnote'),
+    path('/viewint_title', viewes_user_title, name='viewint_title'),
+    path('/view_note/<int:id_note>', view_your_note, name='view_notess'),
+    ]
 
-]
