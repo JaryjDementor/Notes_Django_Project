@@ -35,8 +35,6 @@ def login_request(request):
                 return redirect("viewint_title")
             else:
                 messages.error(request,"Invalid username or password.")
-        else:
-            messages.error(request,"Invalid username or password.")
     form = AuthenticationForm()
     return render(request=request, template_name="accounts/login.html", context={"login_form":form})
 
