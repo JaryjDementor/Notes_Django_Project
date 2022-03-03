@@ -12,5 +12,7 @@
 <h4> Title: </h4>
 <h5> {{ note.title }} </h5>
 <h6> Note: </h6>
-<h7> {{ note.text }} </h7>
+<div>
+     {{ note.text|linebreaks }}
+</div>
 {% endblock %}

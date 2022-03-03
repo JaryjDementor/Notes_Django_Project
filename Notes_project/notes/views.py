@@ -1,13 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+
+from django.shortcuts import render, redirect
 from .forms import NoteUserForm
 from .models import Note
-from django.http import HttpResponse
 # Create your views here.
 
 
 def create(request):
-    error=''
-    id = request.user.id
     if request.method == 'POST':
 
         form = NoteUserForm(request.POST)
@@ -17,13 +15,9 @@ def create(request):
             order.save()
             return redirect("viewint_title")
 
-
-        else:
-            error= 'Not good form'
     form=NoteUserForm
     data={
-        'form':form,
-        'error': error
+        'form':form
     }
     return render(request,'notes/create.html',data)
 

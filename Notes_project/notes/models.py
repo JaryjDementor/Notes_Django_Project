@@ -7,7 +7,7 @@ from  django.urls import  reverse
 
 class Note(Model):
     title=CharField('Title',max_length=100)
-    text=CharField('Your note', max_length=255)
+    text=CharField('Your note', max_length=1000)
     data=DateTimeField(default=datetime.now())
     iduser=CharField('idUser',max_length=5)
 

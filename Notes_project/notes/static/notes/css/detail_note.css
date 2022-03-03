@@ -45,12 +45,14 @@ h6 {
     top: -78pt;
     left: 145pt;
 }
-h7 {
+div {
     color: #b3003b;
     font-size: 150%;
     position: relative;
-    top: -65pt;
-    left: 145pt;
+    padding: 10px;
+    top: -80pt;
+    margin-right: 170px;
+    left: 130pt;
 }
 
 body{
