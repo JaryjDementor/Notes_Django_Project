@@ -19,7 +19,7 @@ def register_request(request):
             login(request, user)
             messages.success(request, "Registration successful.")
             return redirect("viewint_title")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
+        messages.error(request, "Unsuccessful registration.")
     form = NewUserForm()
     return render(
         request=request,

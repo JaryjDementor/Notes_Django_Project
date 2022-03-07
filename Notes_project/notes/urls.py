@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import create, viewes_user_title, view_your_note
 
 urlpatterns = [
     path("", create, name="addnote"),
