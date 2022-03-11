@@ -40,8 +40,6 @@ def login_request(request):
                 messages.info(request, f"You are now logged in as {username}.")
 
                 return redirect("viewint_title")
-            else:
-                messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
     return render(
         request=request,
@@ -52,5 +50,4 @@ def login_request(request):
 
 def logout_request(request):
     logout(request)
-    messages.info(request, "You have successfully logged out.")
     return redirect("first_page")

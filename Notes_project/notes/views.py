@@ -1,3 +1,4 @@
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect
 from .forms import NoteUserForm
 from .models import Note
@@ -39,6 +40,9 @@ def view_your_note(request, id_note: int):
     idus = request.user.id
     if idus:
         note = Note.objects.get(id=id_note)
-        return render(request, "notes/detail_note.html", context={"note": note})
+        if int(note.iduser) == int(idus):
+            return render(request, "notes/detail_note.html", context={"note": note})
+        else:
+            raise PermissionDenied()
     else:
         return redirect("first_page")
