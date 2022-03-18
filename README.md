@@ -56,14 +56,14 @@
 ![](img_For_README/notebooks.png)
 
 ### If the user navigates to the page for creating new notebook, the application will go to the record creation page.
-![](img_For_README/creat notebook.png)
+![](img_For_README/creat_notebook.png)
 
 ### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
 ![](img_For_README/notebooks1.png)
 
 ### On this page you can view the title of your entries or go to the page for creating new note.
 ## If the user navigates to the page for creating a new note, the application will go to the record creation page.
-![](img_For_README/create note.png)
+![](img_For_README/create_note.png)
 
 
 ## If the user clicks on the title of their entry, the app will take them to the view note page
