@@ -12,12 +12,13 @@
 
 <h3><a href="{% url 'logout' %}">Logout</a></h3>
 
-<h4> Your title : </h4>
+<h4><a href="{% url 'delete_notebook' idnotebook %}"> Delete Notebook </a> </h4>
+
+<h5> Your title : </h5>
 
 {% for item in title %}
     <p><a href="{% url 'view_notess' item.id_notebook item.id %}"><b>{{item.title}}</b></a></p>
 {% endfor %}
-
 
 
 

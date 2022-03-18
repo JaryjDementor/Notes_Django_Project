@@ -8,17 +8,17 @@ h1 a {
 
 h2 a {
     color: black;
-    font-size: 60%;
+    font-size: 69%;
     position: relative;
-    top: 0pt;
-    left: 8pt;
+    top: -20pt;
+    left: 1059pt;
 }
 
 h3 a {
-    color: black;
+    color: red;
     font-size: 80%;
     position: relative;
-    top: -68pt;
+    top: 430pt;
     left: 1050pt;
 }
 

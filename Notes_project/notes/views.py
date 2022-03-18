@@ -13,6 +13,16 @@ def check_log(id_user):
         raise PermissionDenied()
 
 
+def delete_notebook(request, idnotebook: int):
+    Notebook.objects.filter(id=idnotebook).delete()
+    return redirect("view notebooks")
+
+
+def delete_note(request, idnotebook: int, idnote: int):
+    Note.objects.filter(id=idnote).delete()
+    return redirect("notebook", idnotebook)
+
+
 def viewes_user_notebooks(request):
     idus = request.user.id
     check_log(idus)
@@ -64,9 +74,9 @@ def create(request, idnotebook: int):
             order.iduser = request.user.id
             order.id_notebook = idnotebook
             order.save()
-            return redirect("view notebooks")
+            return redirect("notebook", idnotebook)
     form = NoteUserForm
-    data = {"form": form,'idnotebook':idnotebook}
+    data = {"form": form, "idnotebook": idnotebook}
     return render(request, "notes/create.html", data)
 
 
