@@ -66,7 +66,7 @@ def create(request, idnotebook: int):
             order.save()
             return redirect("view notebooks")
     form = NoteUserForm
-    data = {"form": form}
+    data = {"form": form,'idnotebook':idnotebook}
     return render(request, "notes/create.html", data)
 
 
