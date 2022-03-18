@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
-<h1><a href="{% url 'viewint_title' %}">View my title</a> </h1>
+<!--<h1><a href="{% url 'viewint_title' %}">View my notebook</a> </h1>-->
 <h2><a href="{% url 'addnote' %}">Create new note</a> </h2>
 <h3><a href="{% url 'logout' %}">Logout</a></h3>
-<h4> Yor title note: </h4>
+<h4> Yor title notebook: </h4>
 
-{% for item in info %}
-    <p><a href="{% url 'view_notess' item.id %}"><b>{{item.title}}</b></a>- {{item.data}} {{ item.id }}</p>
+{% for item in title %}
+    <p><a href="{% url 'viewint_notebook' item.id %}"><b></b></a></p>
 {% endfor %}
-
+<h5><a href="{% url 'add_notebook' %}"> Create new notebook </a> </h5>
 {% endblock %}

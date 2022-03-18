@@ -6,8 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<h1><a href="{% url 'viewint_title' %}">View my title</a> </h1>
-<h2><a href="{% url 'addnote' %}">Create new note</a> </h2>
+<h1><a href="{% url 'notebook' note.id_notebook%}"> Back to notebook </a> </h1>
 <h3><a href="{% url 'logout' %}">Logout</a></h3>
 <h4> Title: </h4>
 <h5> {{ note.title }} </h5>
@@ -15,5 +14,5 @@
 <div>
      {{ note.text|linebreaks }}
 </div>
-<h7> {{check}}, {{idus}} </h7>
+
 {% endblock %}

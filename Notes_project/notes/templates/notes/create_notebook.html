@@ -6,13 +6,12 @@
 {% endblock %}
 
 {% block content %}
-
+<h1><a href="{% url 'view notebooks' %}">Back</a> </h1>
 <h2>  Create new note </h2>
 <div class="features">
 <form method="post">
 {% csrf_token %}
-    <p>{{form.title}}</p><br>
-       <p> {{form.text}}</p><br>
+    <p>{{form.name_notebook}}</p><br>
     <spam> {{ error }} </spam>
     <button class="btn btn-success" type="submit"> Add </button>
 </form>

@@ -18,7 +18,7 @@ h3 a{
     color: black;
     font-size: 80%;
     position: relative;
-    top: -60pt;
+    top: -50pt;
     left: 1060pt;
 }
 
@@ -26,34 +26,14 @@ h4 {
     color: black;
     font-size: 200%;
     position: relative;
-    top: -100pt;
+    top: -95pt;
     left: 170pt;
 }
 
 p a {
     color: #333399;
     position: relative;
+    top: -82pt;
+    left: 170pt;
 
 }
-
-p {
-    color: black;
-    position: relative;
-    top: -90pt;
-    left: 150pt;
-}
-h5 a {
-    color: black;
-    font-size: 80%;
-    position: relative;
-    top: -40pt;
-    left: 0pt;
-}
-
-body{
-    background-color: #2c2c2c;
-    background-image: url('/static/img/fonaddd.png');
-    background-size: cover;
-    overflow: hidden;
-}
-

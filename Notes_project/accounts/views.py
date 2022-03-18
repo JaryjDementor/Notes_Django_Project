@@ -18,8 +18,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("viewint_title")
-        messages.error(request, "Unsuccessful registration.")
+            return redirect("view notebooks")
     form = NewUserForm()
     return render(
         request=request,
@@ -39,7 +38,7 @@ def login_request(request):
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
 
-                return redirect("viewint_title")
+                return redirect("view notebooks")
     form = AuthenticationForm()
     return render(
         request=request,
