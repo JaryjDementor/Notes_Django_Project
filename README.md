@@ -56,7 +56,7 @@
 ![](img_For_README/notebooks.png)
 
 ### If the user navigates to the page for creating new notebook, the application will go to the record creation page.
-![](img_For_README/Безымянный11.png)
+![](img_For_README/creat notebook.png)
 
 ### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
 ![](img_For_README/notebooks1.png)
