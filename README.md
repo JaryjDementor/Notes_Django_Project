@@ -53,21 +53,21 @@
 
 ### If the user has entered the wrong information, the page will be displayed and the user will be prompted to enter the username and password again.
 ## If the data entered is correct, the user is redirected to the record list notebooks.
-![](../../Desktop/notebooks.png)
+![](img_For_README/notebooks.png)
 
 ### If the user navigates to the page for creating new notebook, the application will go to the record creation page.
-![](../../Desktop/create notebook.png)
+![](img_For_README/Безымянный11.png)
 
 ### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
-![](../../Desktop/notebooks1.png)
+![](img_For_README/notebooks1.png)
 
 ### On this page you can view the title of your entries or go to the page for creating new note.
 ## If the user navigates to the page for creating a new note, the application will go to the record creation page.
-![](../../Desktop/create note.png)
+![](img_For_README/create note.png)
 
 
 ## If the user clicks on the title of their entry, the app will take them to the view note page
-![](../../Desktop/note.png)
+![](img_For_README/note.png)
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 
 ## Thank you for reading the Notes app :)
