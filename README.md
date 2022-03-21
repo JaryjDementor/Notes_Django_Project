@@ -59,15 +59,17 @@
 ![](img_For_README/creat_notebook.png)
 
 ### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
-![](img_For_README/notebooks1.png)
+![](img_For_README/notebook.png)
 
-### On this page you can view the title of your entries or go to the page for creating new note.
+### On this page you can view the title of your entries, go to the page for creating new note or delete notebook .
 ## If the user navigates to the page for creating a new note, the application will go to the record creation page.
 ![](img_For_README/create_note.png)
 
 
 ## If the user clicks on the title of their entry, the app will take them to the view note page
 ![](img_For_README/note.png)
+
+## On this page user can delete note. 
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 
 ## Thank you for reading the Notes app :)
