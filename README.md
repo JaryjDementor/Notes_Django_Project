@@ -32,8 +32,10 @@
 * Create notebook
 * View all notebooks
 * View the selected notebook
+* Delete notebook
 * Create note 
 * View note
+* Delete note
 
 ## On the first page, the user can proceed to registration or logging.
 ![](img_For_README/firstpage.png)
