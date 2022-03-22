@@ -14,7 +14,9 @@
 
 <h4><a href="{% url 'delete_notebook' idnotebook %}"> Delete Notebook </a> </h4>
 
-<h5> Your title : </h5>
+<h5><a href="{% url 'update_name_notebook' idnotebook %}"> Edite name Notebook </a> </h5>
+
+<h6> Notebook - {{notebook.name_notebook}}: </h6>
 
 {% for item in title %}
     <p><a href="{% url 'view_notess' item.id_notebook item.id %}"><b>{{item.title}}</b></a></p>

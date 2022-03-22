@@ -1,9 +1,25 @@
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect
+from django.views.generic import UpdateView
 from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
 
 # Create your views here.
+
+
+class Notebook_name_Update(UpdateView):
+    model = Notebook
+    template_name = "notes/update_name_notebook.html"
+
+    form_class = NotebookForm
+
+
+class Note_Update(UpdateView):
+    model = Note
+    template_name = "notes/update_note.html"
+
+    form_class = NoteUserForm
+    context_object_name = "note"
 
 
 def check_log(id_user):
@@ -58,7 +74,7 @@ def viewes_notebook(request, idnotebook: int):
         return render(
             request,
             "notes/notebook.html",
-            context={"title": title, "idnotebook": idnotebook},
+            context={"title": title, "idnotebook": idnotebook, "notebook": notebook},
         )
     else:
         raise PermissionDenied()
@@ -89,10 +105,10 @@ def viewes_user_title(request):
     return render(request, "notes/viewe_user_title.html", context=data)
 
 
-def view_your_note(request, idnotebook: int, id_note: int):
+def view_your_note(request, idnotebook: int, idnote: int):
     idus = request.user.id
     check_log(idus)
-    note = Note.objects.get(id=id_note, id_notebook=idnotebook)
+    note = Note.objects.get(id=idnote, id_notebook=idnotebook)
     if int(note.iduser) == int(idus):
         return render(request, "notes/detail_note.html", context={"note": note})
     else:

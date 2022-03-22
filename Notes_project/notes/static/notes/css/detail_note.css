@@ -22,27 +22,35 @@ h3 a {
     left: 1050pt;
 }
 
-h4 {
-    color: #333399;
-    font-size: 150%;
+h4 a {
+    color: #000066;
+    font-size: 100%;
     position: relative;
-    top: -55pt;
-    left: 145pt;
+    top: 380pt;
+    left: 1051pt;
 }
 
 h5 {
-    color: #b3003b;
-    font-size: 160%;
-    position: relative;
-    top: -85pt;
-    left: 250pt;
-}
-
-h6 {
     color: #333399;
     font-size: 150%;
     position: relative;
-    top: -78pt;
+    top: -116pt;
+    left: 145pt;
+}
+
+h6 {
+    color: #b3003b;
+    font-size: 160%;
+    position: relative;
+    top: -144pt;
+    left: 230pt;
+}
+
+h7 {
+    color: #333399;
+    font-size: 150%;
+    position: relative;
+    top: -134pt;
     left: 145pt;
 }
 div {
@@ -50,9 +58,9 @@ div {
     font-size: 150%;
     position: relative;
     padding: 10px;
-    top: -80pt;
+    top: -130pt;
     margin-right: 170px;
-    left: 130pt;
+    left: 150pt;
 }
 
 body{

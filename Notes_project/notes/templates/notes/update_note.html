@@ -1,0 +1,22 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{% block css_aditional %}
+<link rel="stylesheet" href="{% static 'notes/css/create.css'%}">
+{% endblock %}
+
+{% block content %}
+<h1><a href="{% url 'notebook' note.id_notebook %}">Back</a> </h1>
+<h2>  Create new note </h2>
+<div class="features">
+<form method="post">
+{% csrf_token %}
+    <p>{{form.title}}</p><br>
+       <p> {{form.text}}</p><br>
+    <spam> {{ error }} </spam>
+    <button class="btn btn-success" type="submit"> Update </button>
+</form>
+</div>
+
+
+{% endblock %}
