@@ -20,4 +20,5 @@ urlpatterns = [
     path("/addnotebook", create_notebook, name="add_notebook"),
     path("/delete_notebook/<int:idnotebook>", delete_notebook, name="delete_notebook"),
     path("/delete_note/<int:idnotebook>/<int:idnote>", delete_note, name="delete_note"),
+
 ]
