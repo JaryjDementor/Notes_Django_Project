@@ -32,9 +32,11 @@
 * Create notebook
 * View all notebooks
 * View the selected notebook
+* Edit name notebook
 * Delete notebook
 * Create note 
 * View note
+* Edit note
 * Delete note
 
 ## On the first page, the user can proceed to registration or logging.
@@ -63,15 +65,26 @@
 ### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
 ![](img_For_README/notebook.png)
 
-### On this page you can view the title of your entries, go to the page for creating new note or delete notebook .
+### On this page you can view the title of your entries, go to the page for creating new note,edit name notebook or delete notebook.
+
+## If the user navigates to the page for edit name notebook, the application will go to the record update name notebook.
+![](img_For_README/update_notebook.png)
+### On this page you can change name notebook or come back to notebook.
+
 ## If the user navigates to the page for creating a new note, the application will go to the record creation page.
 ![](img_For_README/create_note.png)
 
 
-## If the user clicks on the title of their entry, the app will take them to the view note page
+## If the user clicks on the title of their entry, the app will take them to the view note page.
 ![](img_For_README/note.png)
 
-## On this page user can delete note. 
+## On this page user can edit note or delete note. 
+
+## If the user navigates to the page for edit note, the application will go to the record update note.
+![](img_For_README/update_note.png)
+
+### On this page you can change note or come back to view note page.
+
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 
 ## Thank you for reading the Notes app :)
