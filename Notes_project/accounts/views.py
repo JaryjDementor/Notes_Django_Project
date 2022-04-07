@@ -11,11 +11,13 @@ from django.template.loader import render_to_string
 from django.db.models.query import Q
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+
 # Create your views here.
 
 
 def first_page(reqeust):
     return render(reqeust, "accounts/first_page.html")
+
 
 def form_new_user(request):
     form = NewUserForm()
@@ -25,13 +27,14 @@ def form_new_user(request):
         context={"register_form": form},
     )
 
+
 def register_request(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
-            mail=order.email
-            email_from_bd=User.objects.filter(email=mail)
+            mail = order.email
+            email_from_bd = User.objects.filter(email=mail)
             if email_from_bd:
                 form_new_user(request)
             else:
@@ -68,41 +71,47 @@ def logout_request(request):
 
 
 def resset_password_request(request):
-    id=request.user.id
+    id = request.user.id
     if id:
-        return redirect('view notebooks')
+        return redirect("view notebooks")
     else:
-        if request.method == 'POST':
+        if request.method == "POST":
             password_form = PasswordResetForm(request.POST)
             if password_form.is_valid():
-                data = password_form.cleaned_data.get('email')
-                user_email=User.objects.filter(Q(email=data))
+                data = password_form.cleaned_data.get("email")
+                user_email = User.objects.filter(Q(email=data))
                 if user_email.exists():
                     for user in user_email:
-                        subjects='Password Resquest'
-                        email_template_name='accounts/password_messege.txt'
-                        parameters={
-                            'email': user.email,
-                            'domain': '127.0.0.1:8000',
-                            'site_name':'Notes_project',
-                            'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                            'token': default_token_generator.make_token(user),
-                            'protocol:': 'http',
+                        subjects = "Password Resquest"
+                        email_template_name = "accounts/password_messege.txt"
+                        parameters = {
+                            "email": user.email,
+                            "domain": "127.0.0.1:8000",
+                            "site_name": "Notes_project",
+                            "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                            "token": default_token_generator.make_token(user),
+                            "protocol:": "http",
                         }
-                        email=render_to_string(email_template_name, parameters)
+                        email = render_to_string(email_template_name, parameters)
                         try:
-                            send_mail(subjects, email, '', [user.email], fail_silently=False)
+                            send_mail(
+                                subjects, email, "", [user.email], fail_silently=False
+                            )
                         except:
-                            return HttpResponse('Invalid Header')
-                        return redirect('succesful_send')
+                            return HttpResponse("Invalid Header")
+                        return redirect("succesful_send")
 
         else:
-            password_form=PasswordResetForm()
-        context={
-            'password_form' :  password_form,
-
+            password_form = PasswordResetForm()
+        context = {
+            "password_form": password_form,
         }
-        return render(request=request, template_name="accounts/reset_password.html", context=context)
+        return render(
+            request=request,
+            template_name="accounts/reset_password.html",
+            context=context,
+        )
+
 
 def check_mail(request):
-    return render(request=request,template_name='accounts/send_mail_succesful.html')
+    return render(request=request, template_name="accounts/send_mail_succesful.html")
