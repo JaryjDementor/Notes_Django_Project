@@ -29,6 +29,7 @@
 * Register 
 * log in 
 * Logout 
+* Reset password
 * Create notebook
 * View all notebooks
 * View the selected notebook
@@ -40,50 +41,60 @@
 * Delete note
 
 ## On the first page, the user can proceed to registration or logging.
-![](img_For_README/firstpage.png)
+![](img_For_README/first_page.png)
 
 ## By clicking on the register link, a registration form will be made available to the user.
 ### The user will be asked to:
 * Username
 * Email
 * Password
-![](img_For_README/registration.png)
+![](img_For_README/register.png)
 
-## By clicking on the register link, a logining form will be made available to the user.
+## By clicking on the login link, a logining form will be made available to the user.
 ### On the logging page, the user will be asked to:
 * Username
 * Password
-![](img_For_README/logging.png)
+![](img_For_README/login.png)
+
+### If you forgot password, you can click "Forgot password". On this page you must enter the email to which your login is register or click 'Back'and they will return to logining.
+![](img_For_README/reset_password.png)
+### After you click 'Reset password' an email will come to your email with a link to which you will be able to reset password.
+![](img_For_README/sukcesful.png)
+
+### By clicking on the link in the mail you get to the password change page.
+![](img_For_README/confir_password.png)
+
+### On this page you enter new password,click 'Reset password confirm' and application get logining page.
 
 ### If the user has entered the wrong information, the page will be displayed and the user will be prompted to enter the username and password again.
 ## If the data entered is correct, the user is redirected to the record list notebooks.
-![](img_For_README/notebooks.png)
+![](img_For_README/Nootbooks.png)
+## On this page you will see a list of notebooks you have created and create new notebook.
 
 ### If the user navigates to the page for creating new notebook, the application will go to the record creation page.
-![](img_For_README/creat_notebook.png)
+![](img_For_README/create_notebook.png)
 
-### If the user clicks on the one of the notebooks,the app will take them to the view title notebook.
+### If you click select notebook< application navigate you to the notebook page.
 ![](img_For_README/notebook.png)
-
-### On this page you can view the title of your entries, go to the page for creating new note,edit name notebook or delete notebook.
+### On this page you can create new note, edit name notebook and delete notebook.
 
 ## If the user navigates to the page for edit name notebook, the application will go to the record update name notebook.
-![](img_For_README/update_notebook.png)
+![](img_For_README/edit_noutbook.png)
 ### On this page you can change name notebook or come back to notebook.
 
-## If the user navigates to the page for creating a new note, the application will go to the record creation page.
+## If you navigate to the page for creating a new note, the application will go to the record creation page.
 ![](img_For_README/create_note.png)
 
+### If you click 'Delete Notebook'.The notebook will be delete.
 
-## If the user clicks on the title of their entry, the app will take them to the view note page.
-![](img_For_README/note.png)
-
+## If you click on the title of their entry, the app will take them to the view note page.
+![](img_For_README/Note.png)
 ## On this page user can edit note or delete note. 
 
-## If the user navigates to the page for edit note, the application will go to the record update note.
-![](img_For_README/update_note.png)
-
+## If you navigate to the page for edit note, the application will go to the record update note.
+![](img_For_README/edir_note.png)
 ### On this page you can change note or come back to view note page.
+### If you click 'Delete Note',the note will be delete.   
 
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
 

@@ -42,7 +42,7 @@ def register_request(request):
                 login(request, user)
                 messages.success(request, "Registration successful.")
                 return redirect("view notebooks")
-    form_new_user(request)
+    return form_new_user(request)
 
 
 def login_request(request):
