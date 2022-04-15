@@ -1,0 +1,38 @@
+h1 a {
+    color: black;
+    font-size: 45%;
+    position: relative;
+    top: 4pt;
+    left: 5pt;
+}
+
+h2 a{
+    color: black;
+    font-size: 60%;
+    position: relative;
+    top: 8pt;
+    left: 8pt;
+}
+
+h3 a{
+    color: black;
+    font-size: 80%;
+    position: relative;
+    top: -60pt;
+    left: 1060pt;
+}
+
+h4 {
+    color: black;
+    font-size: 200%;
+    position: relative;
+    top: -97pt;
+    left: 170pt;
+}
+
+p a {
+    color: #333399;
+    position: relative;
+    top: -83pt;
+    left: 170pt;
+}
