@@ -10,6 +10,7 @@
 <h2><a href="{% url 'add_notebook' %}"> Create notebook </a> </h2>
 <h3><a href="{% url 'logout' %}">Logout</a></h3>
 <h4> Your notebooks: </h4>
+<h5><a href="{% url 'rest_view' %}">Rest</a></h5>
 
 {% for item in info %}
     <p><a href="{% url 'notebook' item.id %}"><b>{{item.name_notebook}}</b></a></p>

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-56thd^n5qmg244i3vrik$n%yt*l3=*qfi)xzw@^bmgcsfn+&h9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts',
     'notes',
+    'rest_notes',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

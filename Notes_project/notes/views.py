@@ -4,7 +4,6 @@ from django.views.generic import UpdateView
 from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
 
-# Create your views here.
 
 
 class Notebook_name_Update(UpdateView):
@@ -41,6 +40,7 @@ def delete_note(request, idnotebook: int, idnote: int):
 
 def viewes_user_notebooks(request):
     idus = request.user.id
+
     check_log(idus)
     db = Notebook.objects.all()
     namenotebook = Notebook.objects.filter(iduser=idus)
