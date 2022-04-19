@@ -143,3 +143,9 @@ EMAIL_HOST_USER = "yourmail@gmail.com"
 EMAIL_HOST_PASSWORD = "yourpassword"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ]
+}

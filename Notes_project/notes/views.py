@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import UpdateView
 from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
+from random import randint
 
 
 
@@ -40,11 +41,11 @@ def delete_note(request, idnotebook: int, idnote: int):
 
 def viewes_user_notebooks(request):
     idus = request.user.id
-
+    id_staff = request.user.is_staff
     check_log(idus)
     db = Notebook.objects.all()
     namenotebook = Notebook.objects.filter(iduser=idus)
-    data = {"info": namenotebook, "db": db}
+    data = {"info": namenotebook, "db": db, 'id_staff': id_staff}
     return render(request, "notes/view_notebooks.html", context=data)
 
 
