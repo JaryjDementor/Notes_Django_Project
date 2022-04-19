@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts',
     'notes',
+    'rest_notes',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -141,3 +143,9 @@ EMAIL_HOST_USER = "yourmail@gmail.com"
 EMAIL_HOST_PASSWORD = "yourpassword"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ]
+}
