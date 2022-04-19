@@ -10,8 +10,7 @@
 <h2><a href="{% url 'add_notebook' %}"> Create notebook </a> </h2>
 <h3><a href="{% url 'logout' %}">Logout</a></h3>
 {% if id_staff == 1 %}
-   <h4><a href="{% url 'user-list' %}">View all users</a></h4>
-   <h5><a href="{% url 'user-detail' 4 %}">Change</a></h5>
+   <h5><a href="{% url 'user-list' %}">View all users</a></h5>
 {% endif %}
 
 <h6> Your notebooks: </h6>

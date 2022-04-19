@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect
 from django.views.generic import UpdateView
 from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
-from random import randint
-
 
 
 class Notebook_name_Update(UpdateView):
@@ -45,7 +43,7 @@ def viewes_user_notebooks(request):
     check_log(idus)
     db = Notebook.objects.all()
     namenotebook = Notebook.objects.filter(iduser=idus)
-    data = {"info": namenotebook, "db": db, 'id_staff': id_staff}
+    data = {"info": namenotebook, "db": db, "id_staff": id_staff}
     return render(request, "notes/view_notebooks.html", context=data)
 
 

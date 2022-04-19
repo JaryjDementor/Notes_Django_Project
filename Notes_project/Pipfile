@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django-extensions = "*"
+black = "*"
 
 [dev-packages]
 
