@@ -39,6 +39,7 @@
 * View note
 * Edit note
 * Delete note
+* Rest API
 
 ## On the first page, the user can proceed to registration or logging.
 ![](img_For_README/first_page.png)
@@ -97,6 +98,18 @@
 ### If you click 'Delete Note',the note will be delete.   
 
 ## If the user clicks on Logout, the software logs the user out and goes to the first page.
+
+## REST API
+### If the user is logged in as an administrator, the REST API will be available.
+![](img_For_README/view_all_users.png)
+### If admin clicks on "View all users", the application will go to the Django Rest Api.
+![](img_For_README/rest_api.png)
+### On this page, the admin can view all registered users and crate new user. 
+![](img_For_README/create_new_user.png)
+
+### If the admin enters the user ID in the url, the page for editing this user's data will open.
+![](img_For_README/rest_datail.png)
+
 
 ## Thank you for reading the Notes app :)
 
