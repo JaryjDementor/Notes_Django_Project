@@ -10,6 +10,11 @@ class ViewTestCase(TestCase):
         test_user = User.objects.create_user(username='TestUser', password='12345678Pas', email='test@gmail.com')
         test_user.save()
 
+    def test_first_page(self):
+        c = Client()
+        response = c.get('')
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
     def test_register_request_uncorrect_request(self):
         c = Client()
         response = c.post('/register', {'username': 'TestUser', 'email': 'example', 'password': '12345678Pas', 'password2': ''})
@@ -23,7 +28,7 @@ class ViewTestCase(TestCase):
     def test_register_request_correct_request(self):
         c = Client()
         response = c.post('/register', {'username': 'TestUser1', 'email': 'test1@gmail.com', 'password1': '12345678Pas', 'password2': '12345678Pas'})
-        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(status.HTTP_302_FOUND, response.status_code)
 
     def test_login_request_uncorrect_request(self):
         c = Client()
@@ -33,7 +38,13 @@ class ViewTestCase(TestCase):
     def test_login_request_correct_request(self):
         c = Client()
         response = c.post('/login', {'username': 'TestUser', 'password': '12345678Pas'})
-        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(status.HTTP_302_FOUND, response.status_code)
+
+    def test_logout_request(self):
+        c = Client()
+        response = c.get('/logout')
+        self.assertEqual(status.HTTP_302_FOUND, response.status_code)
+
 
 
 

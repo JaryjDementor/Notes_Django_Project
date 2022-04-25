@@ -5,7 +5,7 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.db.models.query import Q
@@ -40,7 +40,7 @@ def register_request(request):
                 user = form.save()
                 login(request, user)
                 messages.success(request, "Registration successful.")
-                return HttpResponse(redirect("view notebooks"))
+                return HttpResponseRedirect("accounts/view_notebooks")
     return HttpResponseBadRequest(form_new_user(request))
 
 
@@ -54,8 +54,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-
-                return HttpResponse(redirect("view notebooks"))
+                return HttpResponseRedirect("accounts/view_notebooks")
     form = AuthenticationForm()
     return HttpResponseBadRequest(render(
         request=request,
@@ -72,7 +71,7 @@ def logout_request(request):
 def resset_password_request(request):
     id = request.user.id
     if id:
-        return redirect("view notebooks")
+        return HttpResponseBadRequest(redirect("view notebooks"))
     else:
         if request.method == "POST":
             password_form = PasswordResetForm(request.POST)
