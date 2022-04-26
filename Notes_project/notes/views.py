@@ -1,5 +1,7 @@
 from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic import UpdateView
 from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
@@ -57,7 +59,8 @@ def create_notebook(request):
             order = form.save(commit=False)
             order.iduser = idus
             order.save()
-            return redirect("view notebooks")
+            url=reverse('view notebooks')
+            return HttpResponseRedirect(url)
 
     form = NotebookForm
     data = {"form": form}

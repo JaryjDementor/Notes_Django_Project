@@ -10,6 +10,7 @@ class ViewTestCase(TestCase):
         test_user = User.objects.create_user(username='TestUser', password='12345678Pas', email='test@gmail.com')
         test_user.save()
 
+
     def test_first_page(self):
         c = Client()
         response = c.get('')
