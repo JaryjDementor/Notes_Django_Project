@@ -7,7 +7,7 @@ from .forms import NoteUserForm, NotebookForm
 from .models import Note, Notebook
 
 
-class Notebook_name_Update(UpdateView):
+class Notebook_name_Update(UpdateView): #Yes
     model = Notebook
     template_name = "notes/update_name_notebook.html"
 
@@ -29,7 +29,7 @@ def check_log(id_user):
         raise PermissionDenied()
 
 
-def delete_notebook(request, idnotebook: int):
+def delete_notebook(request, idnotebook: int): #Yes
     Notebook.objects.filter(id=idnotebook).delete()
     return redirect("view notebooks")
 
@@ -39,7 +39,7 @@ def delete_note(request, idnotebook: int, idnote: int):
     return redirect("notebook", idnotebook)
 
 
-def viewes_user_notebooks(request):
+def viewes_user_notebooks(request): #Yes
     idus = request.user.id
     id_staff = request.user.is_staff
     check_log(idus)
@@ -49,7 +49,7 @@ def viewes_user_notebooks(request):
     return render(request, "notes/view_notebooks.html", context=data)
 
 
-def create_notebook(request):
+def create_notebook(request): #Yes
     idus = request.user.id
     check_log(idus)
     if request.method == "POST":
@@ -59,8 +59,8 @@ def create_notebook(request):
             order = form.save(commit=False)
             order.iduser = idus
             order.save()
-            url=reverse('view notebooks')
-            return HttpResponseRedirect(url)
+            # url=reverse('view notebooks')
+            return redirect("view notebooks")
 
     form = NotebookForm
     data = {"form": form}
@@ -96,16 +96,6 @@ def create(request, idnotebook: int):
     form = NoteUserForm
     data = {"form": form, "idnotebook": idnotebook}
     return render(request, "notes/create.html", data)
-
-
-def viewes_user_title(request):
-    idus = request.user.id
-    check_log(idus)
-    db = Note.objects.all()
-    title = Note.objects.filter(iduser=idus)
-    data = {"info": title, "db": db}
-    return render(request, "notes/viewe_user_title.html", context=data)
-
 
 def view_your_note(request, idnotebook: int, idnote: int):
     idus = request.user.id
