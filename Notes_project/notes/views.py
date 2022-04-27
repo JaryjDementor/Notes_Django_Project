@@ -14,7 +14,7 @@ class Notebook_name_Update(UpdateView): #Yes
     form_class = NotebookForm
 
 
-class Note_Update(UpdateView):
+class Note_Update(UpdateView): #Yes
     model = Note
     template_name = "notes/update_note.html"
 
@@ -67,7 +67,7 @@ def create_notebook(request): #Yes
     return render(request, "notes/create_notebook.html", data)
 
 
-def viewes_notebook(request, idnotebook: int):
+def viewes_notebook(request, idnotebook: int): #Yes
     idus = request.user.id
     check_log(idus)
     notebook = Notebook.objects.get(id=idnotebook)
