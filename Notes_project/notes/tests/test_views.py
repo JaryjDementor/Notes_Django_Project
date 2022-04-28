@@ -106,3 +106,15 @@ class ViewNoteTestCase(TestCase):
         note_delete = Note.objects.filter(id=3)
         self.assertEqual(status.HTTP_302_FOUND, response2.status_code)
         self.assertEqual([], list(note_delete))
+
+    def test_view_your_note_check_log(self):
+        c = Client()
+        user = authenticate(username='TestUser', password='12345678Pas')
+        c.force_login(user)
+        response = c.get('/accounts/view_note/2/1')
+        response_2 = c.get('/accounts/view_note/4/2')
+        note = Note.objects.get(id=1)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(['TestTitle', 'Hallo world!!!'], [note.title, note.text])
+        self.assertEqual(status.HTTP_403_FORBIDDEN, response_2.status_code)
+
