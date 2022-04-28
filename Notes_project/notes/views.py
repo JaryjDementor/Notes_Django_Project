@@ -57,6 +57,7 @@ def create_notebook(request):
             order = form.save(commit=False)
             order.iduser = idus
             order.save()
+            # url=reverse('view notebooks')
             return redirect("view notebooks")
 
     form = NotebookForm
@@ -93,16 +94,6 @@ def create(request, idnotebook: int):
     form = NoteUserForm
     data = {"form": form, "idnotebook": idnotebook}
     return render(request, "notes/create.html", data)
-
-
-def viewes_user_title(request):
-    idus = request.user.id
-    check_log(idus)
-    db = Note.objects.all()
-    title = Note.objects.filter(iduser=idus)
-    data = {"info": title, "db": db}
-    return render(request, "notes/viewe_user_title.html", context=data)
-
 
 def view_your_note(request, idnotebook: int, idnote: int):
     idus = request.user.id
