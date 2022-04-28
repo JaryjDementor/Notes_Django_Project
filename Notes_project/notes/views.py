@@ -95,6 +95,7 @@ def create(request, idnotebook: int):
     data = {"form": form, "idnotebook": idnotebook}
     return render(request, "notes/create.html", data)
 
+
 def view_your_note(request, idnotebook: int, idnote: int):
     idus = request.user.id
     check_log(idus)
