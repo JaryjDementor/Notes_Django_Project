@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
-<h1><a href="{% url 'view notebooks' %}">View my notebook</a> </h1>
+<h1 id="view_notebooks" align="left"><a href="{% url 'view notebooks' %}">View my notebook</a> </h1>
 
-<h2><a href="{% url 'add_note' idnotebook %}">Create new note</a> </h2>
+<h1 id="add_note" align="left"><a href="{% url 'add_note' idnotebook %}">Create new note</a> </h1>
 
-<h3><a href="{% url 'logout' %}">Logout</a></h3>
+<h2 id="logout" align="right"><a href="{% url 'logout' %}">Logout</a></h2>
 
-<h4 align="right"><a href="{% url 'delete_notebook' idnotebook %}"> Delete Notebook </a> </h4>
+<h3 id="delete_notebook" align="right"><a href="{% url 'delete_notebook' idnotebook %}"> Delete Notebook </a> </h3>
 
 <h5><a href="{% url 'update_name_notebook' idnotebook %}"> Edite name Notebook </a> </h5>
 
