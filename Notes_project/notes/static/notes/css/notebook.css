@@ -25,16 +25,13 @@ h2[id=logout] a{
     right: 5pt;
 }
 
-h3[id=delete_notebook] a{
-    vertical-align: bottom;
+h2[id=delete_notebook] a{
     color: red;
     font-size: 90%;
-    position: relative;
-    top:410pt;
-    right: 5pt;
+    margin-bottom: 500px;
 }
 
-h5 a {
+h2[id=update_name_notebook] a {
     color: #000066;
     font-size: 120%;
     position: relative;
