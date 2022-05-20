@@ -6,16 +6,16 @@
 {% endblock %}
 
 {% block content %}
- <h1><a href="{% url 'view notebooks' %}">View my notebooks</a> </h1>
-<h2><a href="{% url 'add_notebook' %}"> Create notebook </a> </h2>
-<h3><a href="{% url 'logout' %}">Logout</a></h3>
+    <h1 id="view_notebooks" align="left"><a href="{% url 'view notebooks' %}">View my notebooks</a> </h1>
+    <h1 id="add_notebook" align="left"><a href="{% url 'add_notebook' %}">Create notebook</a> </h1>
+    <h2 id="logout" align="right"><a href="{% url 'logout' %}">Logout</a></h2>
 {% if id_staff == 1 %}
-   <h5><a href="{% url 'user-list' %}">View all users</a></h5>
+   <h3 id="user-list" align="right"><a href="{% url 'user-list' %}">View all users</a></h3>
 {% endif %}
 
-<h6> Your notebooks: </h6>
+<h4 id="notebooks" align="center"> Your notebooks: </h4>
 
 {% for item in info %}
-    <p><a href="{% url 'notebook' item.id %}"><b>{{item.name_notebook}}</b></a></p>
+    <p align="center"><a href="{% url 'notebook' item.id %}"><b>{{item.name_notebook}}</b></a></p>
 {% endfor %}
 {% endblock %}

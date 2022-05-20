@@ -1,10 +1,10 @@
 h1[id=view_notebooks] a {
     vertical-align: top;
     color: black;
-    font-size: 45%;
+    font-size: 43%;
     position: relative;
     top: 20pt;
-    left: 5pt;
+    left: 3pt;
 }
 
 h1[id=add_note] a{
@@ -28,29 +28,33 @@ h2[id=logout] a{
 h2[id=delete_notebook] a{
     color: red;
     font-size: 90%;
-    margin-bottom: 500px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 
 h2[id=update_name_notebook] a {
     color: #000066;
-    font-size: 120%;
-    position: relative;
-    top: 350pt;
-    left: 970pt;
+    font-size: 90%;
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
 }
 
-h6 {
+h3 {
     color: black;
     font-size: 200%;
     position: relative;
-    top: -122pt;
-    left: 160pt;
+    top: -70pt;
+    left: 150pt;
 }
 
 p a {
+    font-size: 120%;
     color: #333399;
     position: relative;
-    top: -112pt;
-    left: 160pt;
+    left: 150pt;
+    top: -60pt;
+
 
 }

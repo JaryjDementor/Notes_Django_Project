@@ -1,46 +1,48 @@
-h1 a {
+h1[id=view_notebooks] a {
+    vertical-align: top;
+    color: black;
+    font-size: 43%;
+    position: relative;
+    top: 20pt;
+    left: 3pt;
+}
+
+h1[id=add_notebook] a{
     color: black;
     font-size: 45%;
     position: relative;
-    top: 4pt;
-    left: 5pt;
+    left: 4pt;
 }
 
-h2 a{
-    color: black;
-    font-size: 60%;
-    position: relative;
-    top: 8pt;
-    left: 8pt;
-}
-
-h3 a{
+h2[id=logout] a{
     color: black;
     font-size: 80%;
     position: relative;
-    top: -60pt;
-    left: 1060pt;
+    top: -45pt;
+    right: 4pt;
+
 }
 
-h5 a {
+h3[id=user-list] a{
     color: #2e004d;
     font-size: 100%;
-    position: relative;
-    top: 400pt;
-    left: 1000pt;
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
 }
 
-h6 {
+h4[id=notebooks] {
     color: black;
     font-size: 200%;
     position: relative;
-    top: -97pt;
-    left: 170pt;
+    right: 28%;
+    top: -75pt;
 }
 
-p a {
+p a{
     color: #333399;
+    font-size: 130%;
     position: relative;
-    top: -83pt;
-    left: 170pt;
+    right: 31%;
+    top: -67pt;
 }
