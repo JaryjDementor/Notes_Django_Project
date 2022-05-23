@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
-<h1><a href="{% url 'notebook' note.id_notebook%}"> Back to notebook </a> </h1>
-<h2><a href="{% url 'logout' %}">Logout</a></h2>
-<h3> <a href="{% url 'delete_note' note.id_notebook note.id%}">Delete Note</a>
-<h4> <a href="{% url 'update_note' note.id_notebook note.id%}">Edit note</a> </h4>
-<h5> Title: </h5>
-<h6> {{ note.title }} </h6>
-<h7> Note: </h7>
+<h1 id="notebook" align="left"><a href="{% url 'notebook' note.id_notebook%}"> Back to notebook </a> </h1>
+<h2 id="logout" align="right"><a href="{% url 'logout' %}">Logout</a></h2>
+<h2 id="delete_notebook" align="right"> <a href="{% url 'delete_note' note.id_notebook note.id%}">Delete Note</a>
+<h2 id="update_note"> <a href="{% url 'update_note' note.id_notebook note.id%}">Edit note</a> </h2>
+<h3 id="title" align="center"> Title: </h3>
+<h4 id="value_title" align="center"> {{ note.title }} </h4>
+<h3 id="note" align="center"> Note: </h3>
 <div>
      {{ note.text|linebreaks }}
 </div>

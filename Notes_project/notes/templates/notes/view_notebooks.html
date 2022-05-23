@@ -9,7 +9,8 @@
     <h1 id="view_notebooks" align="left"><a href="{% url 'view notebooks' %}">View my notebooks</a> </h1>
     <h1 id="add_notebook" align="left"><a href="{% url 'add_notebook' %}">Create notebook</a> </h1>
     <h2 id="logout" align="right"><a href="{% url 'logout' %}">Logout</a></h2>
-{% if id_staff == 1 %}
+
+ {% if id_staff == 1 %}
    <h3 id="user-list" align="right"><a href="{% url 'user-list' %}">View all users</a></h3>
 {% endif %}
 

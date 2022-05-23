@@ -12,6 +12,7 @@ h1[id=add_notebook] a{
     font-size: 45%;
     position: relative;
     left: 4pt;
+    top: 4pt;
 }
 
 h2[id=logout] a{
